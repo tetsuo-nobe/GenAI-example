@@ -9,7 +9,7 @@ from langchain.chains import LLMChain
 from langchain.chains import SimpleSequentialChain
 
 # LLM
-chat = ChatBedrock(model_id = "anthropic.claude-3-sonnet-20240229-v1:0", model_kwargs={"temperature":0})
+chat = ChatOpenAI(model_name = "gpt-3.5-turbo",  temperature=0)
 
 # Tempale #1
 cot_template = """
