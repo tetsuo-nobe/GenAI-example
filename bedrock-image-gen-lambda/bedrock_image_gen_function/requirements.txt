@@ -1,0 +1,4 @@
+boto3
+botocore
+pillow
+aws_xray_sdk

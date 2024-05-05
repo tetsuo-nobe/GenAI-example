@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  bedrock-image2image
+
+  Sample SAM Template for bedrock-image2image
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 300
+    Tracing: Active
+  Api:
+    TracingEnabled: true
+Resources:
+  Image2ImageFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      FunctionName: Image2ImageFunction
+      CodeUri: image2image_function/
+      Handler: app.main_handler
+      Runtime: python3.12
+      Role: !Sub arn:aws:iam::${AWS::AccountId}:role/my-lambda-bedrock-s3-role
+      Architectures:
+      - x86_64
+      Environment: 
+        Variables:
+          LambdaRuntime: true
+      Events:
+        HelloWorld:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /image2image
+            Method: get
+
