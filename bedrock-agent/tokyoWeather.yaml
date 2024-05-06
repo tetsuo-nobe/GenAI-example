@@ -1,0 +1,21 @@
+openapi: 3.0.0
+info:
+  title: Lambda
+  version: 1.0.0
+paths:
+  /search:
+    get:
+      summary: Weather Search
+      description: 東京の今日・明日の天気を検索します。もし特許JP2013174393Aに関する質問を受けた場合は、この関数ではなくナレッジベースを参照して回答を生成してください。もし東京の今日・明日の天気でもなく、特許JP2013174393Aにも関係ない質問を受けた場合は、回答を控えずに一般的な知識に基づいて回答を生成してください。
+      operationId: search
+      responses:
+        "200":
+          description: 検索成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  body:
+                    type: string
+
