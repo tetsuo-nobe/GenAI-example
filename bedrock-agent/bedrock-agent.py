@@ -6,8 +6,8 @@ client = boto3.client("bedrock-agent-runtime")
 
 # 
 session_id:str = str(uuid.uuid1())
-agent_id:str = '1LKFWIDLHS' # AgentのID
-agent_alias_id:str = 'B9XCR4NSWZ' # AgentのエイリアスID (Agentの構成変更後は新しいエイリアスの作成が必要)
+agent_id:str = 'XXXXXXX' # AgentのID
+agent_alias_id:str = 'YYYYYYY' # AgentのエイリアスID (Agentの構成変更後は新しいエイリアスの作成が必要)
 prompt = "東京の今日の天気は？" 
 #prompt = "特許JP2013174393Aについて。この特許はどのような内容で、どのような点に新規性、進歩性があるのか、中学生にもわかる言葉で簡潔に説明してください。"
 
