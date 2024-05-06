@@ -1,3 +1,8 @@
+"""
+
+特許 JP2013174393A についての質問はナレッジベースを、天気の質問の場合は Lambda 関数を用いる Agent
+
+"""
 import uuid
 import boto3
 
